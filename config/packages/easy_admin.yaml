@@ -1,0 +1,41 @@
+easy_admin:
+    site_name: '<img src="/" />'
+    entities:
+        - App\Entity\UserType
+        - App\Entity\Users
+        - App\Entity\ForgetPassword
+        - App\Entity\Members
+        - App\Entity\Countries
+        - App\Entity\Company
+        - App\Entity\CompanyFunctionalArea
+        - App\Entity\Activation
+        - App\Entity\CompanyProjects
+        - App\Entity\Banners
+        - App\Entity\BannerCategory
+        - App\Entity\Posts
+        - App\Entity\PostReply
+        - App\Entity\Projects
+        - App\Entity\ReadProjects
+        - App\Entity\ProjectInvites
+        - App\Entity\Tenders
+        - App\Entity\ShareInvites
+        - App\Entity\TenderComments
+        - App\Entity\ReadTenders
+        - App\Entity\CompanyProjectsMessage
+        - App\Entity\CompanyProjectsMessageReply
+        - App\Entity\Events
+        - App\Entity\EventMessage
+        - App\Entity\EventMesageReply
+        - App\Entity\FriendRequests
+        - App\Entity\Updates
+        - App\Entity\UpdateReply
+        - App\Entity\HideUpdates
+        - App\Entity\Groups
+        - App\Entity\GroupMembers
+        - App\Entity\GroupMessage
+        - App\Entity\GroupMessageReply
+        - App\Entity\AbuseReports
+        - App\Entity\JobCategories
+        - App\Entity\JobOpenings
+        
+        

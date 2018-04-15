@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Bundle\CompanyBundle\Entity\CompanyProjects" table="company_projects">
+    <indexes>
+      <index name="fr_countryId" columns="countryId"/>
+      <index name="fr_company" columns="companyId"/>
+      <index name="fr_members" columns="project_owner"/>
+    </indexes>
+    <id name="projectId" type="integer" column="project_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="projectName" type="string" column="project_name" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="projectType" type="string" column="project_type" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="projectLocation" type="string" column="project_location" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="projectDescription" type="text" column="project_description" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="created" type="datetime" column="created" nullable="true"/>
+    <many-to-one field="companyid" target-entity="Company" fetch="LAZY">
+      <join-columns>
+        <join-column name="companyId" referenced-column-name="company_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="countryid" target-entity="Countries" fetch="LAZY">
+      <join-columns>
+        <join-column name="countryId" referenced-column-name="countryId"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="projectOwner" target-entity="Members" fetch="LAZY">
+      <join-columns>
+        <join-column name="project_owner" referenced-column-name="member_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

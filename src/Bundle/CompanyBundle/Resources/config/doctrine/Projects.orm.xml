@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Bundle\CompanyBundle\Entity\Projects" table="projects">
+    <indexes>
+      <index name="FK_projects" columns="member_id"/>
+      <index name="FK_projects_countries" columns="countryId"/>
+    </indexes>
+    <id name="projectId" type="integer" column="project_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="projectRefNo" type="string" column="project_ref_no" length="15" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="projectName" type="string" column="project_name" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="projectLocation" type="string" column="project_location" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="locationMap" type="string" column="location_map" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="maxAllocBudget" type="integer" column="max_alloc_budget" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="openingDate" type="date" column="opening_date" nullable="true"/>
+    <field name="closingDate" type="date" column="closing_date" nullable="true"/>
+    <field name="description" type="text" column="description" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="attachment1" type="string" column="attachment1" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="attachment2" type="string" column="attachment2" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="publishto" type="integer" column="publishto" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="created" type="datetime" column="created" nullable="true"/>
+    <field name="modified" type="datetime" column="modified" nullable="true"/>
+    <many-to-one field="member" target-entity="Members" fetch="LAZY">
+      <join-columns>
+        <join-column name="member_id" referenced-column-name="member_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="countryid" target-entity="Countries" fetch="LAZY">
+      <join-columns>
+        <join-column name="countryId" referenced-column-name="countryId"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

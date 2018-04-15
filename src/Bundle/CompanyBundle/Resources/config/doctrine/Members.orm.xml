@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Bundle\CompanyBundle\Entity\Members" table="members">
+    <indexes>
+      <index name="FK_members" columns="user_id"/>
+      <index name="FK_members_company" columns="company_id"/>
+      <index name="FK_members_functional_area" columns="company_functional_area_id"/>
+      <index name="FK_members_countries" columns="countryId"/>
+    </indexes>
+    <id name="memberId" type="integer" column="member_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="companyType" type="string" column="company_type" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="companyFunctionalAreaId" type="integer" column="company_functional_area_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="firstName" type="string" column="first_name" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="lastName" type="string" column="last_name" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="designation" type="string" column="designation" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="telephone" type="string" column="telephone" length="15" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="mobile" type="string" column="mobile" length="15" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fax" type="string" column="fax" length="15" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="location" type="string" column="location" length="150" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="gender" type="string" column="gender" length="10" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dateofbirth" type="date" column="dateOfBirth" nullable="true"/>
+    <field name="memberPhoto" type="blob" column="member_photo" length="16777215" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="status" type="integer" column="status" nullable="true">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <field name="cv" type="string" column="cv" length="200" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="portfolio" type="string" column="portfolio" length="200" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="created" type="datetime" column="created" nullable="true"/>
+    <field name="modified" type="datetime" column="modified" nullable="true"/>
+    <many-to-one field="user" target-entity="Users" fetch="LAZY">
+      <join-columns>
+        <join-column name="user_id" referenced-column-name="user_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="company" target-entity="Company" fetch="LAZY">
+      <join-columns>
+        <join-column name="company_id" referenced-column-name="company_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="countryid" target-entity="Countries" fetch="LAZY">
+      <join-columns>
+        <join-column name="countryId" referenced-column-name="countryId"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

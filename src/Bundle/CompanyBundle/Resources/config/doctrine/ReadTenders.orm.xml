@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Bundle\CompanyBundle\Entity\ReadTenders" table="read_tenders">
+    <indexes>
+      <index name="read_tenders_ibfk_1" columns="member_id"/>
+      <index name="read_tenders_ibfk_2" columns="tender_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="member" target-entity="Members" fetch="LAZY">
+      <join-columns>
+        <join-column name="member_id" referenced-column-name="member_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="tender" target-entity="Tenders" fetch="LAZY">
+      <join-columns>
+        <join-column name="tender_id" referenced-column-name="tender_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

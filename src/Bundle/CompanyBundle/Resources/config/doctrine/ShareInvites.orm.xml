@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Bundle\CompanyBundle\Entity\ShareInvites" table="share_invites">
+    <indexes>
+      <index name="FK_share_invites" columns="from_member_id"/>
+      <index name="FK_share_invites_1" columns="to_member_id"/>
+    </indexes>
+    <id name="shareId" type="integer" column="share_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="page" type="string" column="page" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="id" type="integer" column="id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="status" type="string" column="status" length="255" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="created" type="datetime" column="created" nullable="true"/>
+    <many-to-one field="fromMember" target-entity="Members" fetch="LAZY">
+      <join-columns>
+        <join-column name="from_member_id" referenced-column-name="member_id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="toMember" target-entity="Members" fetch="LAZY">
+      <join-columns>
+        <join-column name="to_member_id" referenced-column-name="member_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

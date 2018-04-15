@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Bundle\CompanyBundle\Entity\MemberPortfolio" table="member_portfolio">
+    <indexes>
+      <index name="FK_member_p" columns="member_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="portfolio" type="blob" column="portfolio" length="16777215" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="member" target-entity="Members" fetch="LAZY">
+      <join-columns>
+        <join-column name="member_id" referenced-column-name="member_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
