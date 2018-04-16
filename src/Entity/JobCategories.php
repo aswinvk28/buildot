@@ -28,5 +28,25 @@ class JobCategories
      */
     private $jobCatName;
 
+    public function getJobCatId() 
+    {
+        return $this->jobCatId;
+    }
+
+    public function getJobCatName() 
+    {
+        return $this->jobCatName;
+    }
+
+    public function setJobCatId($jobCatId) 
+    {
+        $this->jobCatId = $jobCatId;
+    }
+
+    public function setJobCatName($jobCatName) 
+    {
+        $this->jobCatName = $jobCatName;
+    }
+
 
 }

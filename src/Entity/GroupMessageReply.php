@@ -55,5 +55,55 @@ class GroupMessageReply
      */
     private $msg;
 
+    public function getReplyId() 
+    {
+        return $this->replyId;
+    }
+
+    public function getReplyMessage() 
+    {
+        return $this->replyMessage;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function getMsg(): \GroupMessage 
+    {
+        return $this->msg;
+    }
+
+    public function setReplyId($replyId) 
+    {
+        $this->replyId = $replyId;
+    }
+
+    public function setReplyMessage($replyMessage) 
+    {
+        $this->replyMessage = $replyMessage;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
+    public function setMsg(\GroupMessage $msg) 
+    {
+        $this->msg = $msg;
+    }
+
 
 }

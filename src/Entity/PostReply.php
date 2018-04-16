@@ -55,5 +55,55 @@ class PostReply
      */
     private $sendBy;
 
+    public function getPostReplyId() 
+    {
+        return $this->postReplyId;
+    }
+
+    public function getMessage() 
+    {
+        return $this->message;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getPost(): \Posts 
+    {
+        return $this->post;
+    }
+
+    public function getSendBy(): \Members 
+    {
+        return $this->sendBy;
+    }
+
+    public function setPostReplyId($postReplyId) 
+    {
+        $this->postReplyId = $postReplyId;
+    }
+
+    public function setMessage($message) 
+    {
+        $this->message = $message;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setPost(\Posts $post) 
+    {
+        $this->post = $post;
+    }
+
+    public function setSendBy(\Members $sendBy) 
+    {
+        $this->sendBy = $sendBy;
+    }
+
 
 }

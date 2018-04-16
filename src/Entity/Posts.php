@@ -52,5 +52,55 @@ class Posts
      */
     private $sendBy;
 
+    public function getPostId() 
+    {
+        return $this->postId;
+    }
+
+    public function getMessage() 
+    {
+        return $this->message;
+    }
+
+    public function getAttachment() 
+    {
+        return $this->attachment;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getSendBy(): \Members 
+    {
+        return $this->sendBy;
+    }
+
+    public function setPostId($postId) 
+    {
+        $this->postId = $postId;
+    }
+
+    public function setMessage($message) 
+    {
+        $this->message = $message;
+    }
+
+    public function setAttachment($attachment) 
+    {
+        $this->attachment = $attachment;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setSendBy(\Members $sendBy) 
+    {
+        $this->sendBy = $sendBy;
+    }
+
 
 }

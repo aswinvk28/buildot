@@ -55,5 +55,55 @@ class FriendRequests
      */
     private $toMember;
 
+    public function getFriendRequestId() 
+    {
+        return $this->friendRequestId;
+    }
+
+    public function getStatus() 
+    {
+        return $this->status;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getFromMember(): \Members 
+    {
+        return $this->fromMember;
+    }
+
+    public function getToMember(): \Members 
+    {
+        return $this->toMember;
+    }
+
+    public function setFriendRequestId($friendRequestId) 
+    {
+        $this->friendRequestId = $friendRequestId;
+    }
+
+    public function setStatus($status) 
+    {
+        $this->status = $status;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setFromMember(\Members $fromMember) 
+    {
+        $this->fromMember = $fromMember;
+    }
+
+    public function setToMember(\Members $toMember) 
+    {
+        $this->toMember = $toMember;
+    }
+
 
 }

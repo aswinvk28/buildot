@@ -65,5 +65,65 @@ class ProjectInvites
      */
     private $toMember;
 
+    public function getProjectInviteId() 
+    {
+        return $this->projectInviteId;
+    }
+
+    public function getStatus() 
+    {
+        return $this->status;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getProject(): \CompanyProjects 
+    {
+        return $this->project;
+    }
+
+    public function getFromMember(): \Members 
+    {
+        return $this->fromMember;
+    }
+
+    public function getToMember(): \Members 
+    {
+        return $this->toMember;
+    }
+
+    public function setProjectInviteId($projectInviteId) 
+    {
+        $this->projectInviteId = $projectInviteId;
+    }
+
+    public function setStatus($status) 
+    {
+        $this->status = $status;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setProject(\CompanyProjects $project) 
+    {
+        $this->project = $project;
+    }
+
+    public function setFromMember(\Members $fromMember) 
+    {
+        $this->fromMember = $fromMember;
+    }
+
+    public function setToMember(\Members $toMember) 
+    {
+        $this->toMember = $toMember;
+    }
+
 
 }

@@ -55,5 +55,55 @@ class UpdateReply
      */
     private $sendBy;
 
+    public function getReplyId() 
+    {
+        return $this->replyId;
+    }
+
+    public function getMessage() 
+    {
+        return $this->message;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getUpdate(): \Updates 
+    {
+        return $this->update;
+    }
+
+    public function getSendBy(): \Members 
+    {
+        return $this->sendBy;
+    }
+
+    public function setReplyId($replyId) 
+    {
+        $this->replyId = $replyId;
+    }
+
+    public function setMessage($message) 
+    {
+        $this->message = $message;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setUpdate(\Updates $update) 
+    {
+        $this->update = $update;
+    }
+
+    public function setSendBy(\Members $sendBy) 
+    {
+        $this->sendBy = $sendBy;
+    }
+
 
 }

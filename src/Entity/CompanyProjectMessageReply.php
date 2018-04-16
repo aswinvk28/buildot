@@ -62,5 +62,65 @@ class CompanyProjectMessageReply
      */
     private $msg;
 
+    public function getReplyId() 
+    {
+        return $this->replyId;
+    }
+
+    public function getReplyMessage() 
+    {
+        return $this->replyMessage;
+    }
+
+    public function getAttachment() 
+    {
+        return $this->attachment;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function getMsg(): \CompanyProjectMessage 
+    {
+        return $this->msg;
+    }
+
+    public function setReplyId($replyId) 
+    {
+        $this->replyId = $replyId;
+    }
+
+    public function setReplyMessage($replyMessage) 
+    {
+        $this->replyMessage = $replyMessage;
+    }
+
+    public function setAttachment($attachment) 
+    {
+        $this->attachment = $attachment;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
+    public function setMsg(\CompanyProjectMessage $msg) 
+    {
+        $this->msg = $msg;
+    }
+
 
 }

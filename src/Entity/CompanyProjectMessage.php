@@ -62,5 +62,65 @@ class CompanyProjectMessage
      */
     private $member;
 
+    public function getMsgId() 
+    {
+        return $this->msgId;
+    }
+
+    public function getMessage() 
+    {
+        return $this->message;
+    }
+
+    public function getAttachment() 
+    {
+        return $this->attachment;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getProject(): \CompanyProjects 
+    {
+        return $this->project;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setMsgId($msgId) 
+    {
+        $this->msgId = $msgId;
+    }
+
+    public function setMessage($message) 
+    {
+        $this->message = $message;
+    }
+
+    public function setAttachment($attachment) 
+    {
+        $this->attachment = $attachment;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setProject(\CompanyProjects $project) 
+    {
+        $this->project = $project;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

@@ -31,5 +31,25 @@ class Usertype
     private $usertypename;
 
     
-    
+    public function getUsertype() 
+    {
+        return $this->usertype;
+    }
+
+    public function getUsertypename() 
+    {
+        return $this->usertypename;
+    }
+
+    public function setUsertype($usertype) 
+    {
+        $this->usertype = $usertype;
+    }
+
+    public function setUsertypename($usertypename) 
+    {
+        $this->usertypename = $usertypename;
+    }
+
+
 }

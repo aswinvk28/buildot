@@ -42,5 +42,45 @@ class AbuseReports
      */
     private $created;
 
+    public function getReportId() 
+    {
+        return $this->reportId;
+    }
+
+    public function getTableName() 
+    {
+        return $this->tableName;
+    }
+
+    public function getId() 
+    {
+        return $this->id;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function setReportId($reportId) 
+    {
+        $this->reportId = $reportId;
+    }
+
+    public function setTableName($tableName) 
+    {
+        $this->tableName = $tableName;
+    }
+
+    public function setId($id) 
+    {
+        $this->id = $id;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
 
 }

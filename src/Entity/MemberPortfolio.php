@@ -38,5 +38,35 @@ class MemberPortfolio
      */
     private $member;
 
+    public function getId() 
+    {
+        return $this->id;
+    }
+
+    public function getPortfolio() 
+    {
+        return $this->portfolio;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setId($id) 
+    {
+        $this->id = $id;
+    }
+
+    public function setPortfolio($portfolio) 
+    {
+        $this->portfolio = $portfolio;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

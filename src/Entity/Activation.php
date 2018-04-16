@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="activation")
  * @ORM\Entity
  */
-class Activation
-{
+class Activation {
+
     /**
      * @var int
      *
@@ -42,6 +42,46 @@ class Activation
      * @ORM\Column(name="created", type="datetime", nullable=true)
      */
     private $created;
+
+    public function getActivationId() 
+    {
+        return $this->activationId;
+    }
+
+    public function getMemberId() 
+    {
+        return $this->memberId;
+    }
+
+    public function getCode() 
+    {
+        return $this->code;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function setActivationId($activationId) 
+    {
+        $this->activationId = $activationId;
+    }
+
+    public function setMemberId($memberId) 
+    {
+        $this->memberId = $memberId;
+    }
+
+    public function setCode($code) 
+    {
+        $this->code = $code;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
 
 
 }

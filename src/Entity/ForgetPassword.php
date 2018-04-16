@@ -42,5 +42,45 @@ class ForgetPassword
      */
     private $created;
 
+    public function getFid() 
+    {
+        return $this->fid;
+    }
+
+    public function getUserid() 
+    {
+        return $this->userid;
+    }
+
+    public function getCode() 
+    {
+        return $this->code;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function setFid($fid) 
+    {
+        $this->fid = $fid;
+    }
+
+    public function setUserid($userid) 
+    {
+        $this->userid = $userid;
+    }
+
+    public function setCode($code) 
+    {
+        $this->code = $code;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
 
 }

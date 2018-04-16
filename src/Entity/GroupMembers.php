@@ -48,5 +48,45 @@ class GroupMembers
      */
     private $member;
 
+    public function getMemberGroupId() 
+    {
+        return $this->memberGroupId;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getGroup(): \Groups 
+    {
+        return $this->group;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setMemberGroupId($memberGroupId) 
+    {
+        $this->memberGroupId = $memberGroupId;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setGroup(\Groups $group) 
+    {
+        $this->group = $group;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

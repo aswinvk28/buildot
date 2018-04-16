@@ -17,6 +17,12 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class RegistrationType extends AbstractType implements DataMapperInterface
 {
+    /**
+     *
+     * @var ContainerAwareInterface
+     */
+    private $container;
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -45,6 +51,8 @@ class RegistrationType extends AbstractType implements DataMapperInterface
                 'required' => false,
             ))
         ;
+        
+        $container = $options['container'];
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -75,13 +83,13 @@ class RegistrationType extends AbstractType implements DataMapperInterface
         $member->setLastName($forms['last_name']->getData());
         $member->setGender($forms['gender']->getData());
         if($forms['member_photo']->getData()->isValid()) {
-            $member->setPersonalPhoto($forms['member_photo']->getData());
+            $member->setPersonalPhoto($forms['member_photo']->getData(), $container->getParameter('photo_dir'));
         }
         if($forms['cv']->getData()->isValid()) {
-            $member->setCurriculumVitae($forms['cv']->getData());
+            $member->setCurriculumVitae($forms['cv']->getData(), $container->getParameter('cv_dir'));
         }
         if($forms['portfolio']->getData()->isValid()) {
-            $member->setWorkPortfolio($forms['portfolio']->getData());
+            $member->setWorkPortfolio($forms['portfolio']->getData(), $container->getParameter('portfolio_dir'));
         }
     }
     

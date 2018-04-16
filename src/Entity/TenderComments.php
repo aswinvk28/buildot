@@ -55,5 +55,55 @@ class TenderComments
      */
     private $member;
 
+    public function getTenderCommentId() 
+    {
+        return $this->tenderCommentId;
+    }
+
+    public function getComment() 
+    {
+        return $this->comment;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getTender(): \Tenders 
+    {
+        return $this->tender;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setTenderCommentId($tenderCommentId) 
+    {
+        $this->tenderCommentId = $tenderCommentId;
+    }
+
+    public function setComment($comment) 
+    {
+        $this->comment = $comment;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setTender(\Tenders $tender) 
+    {
+        $this->tender = $tender;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

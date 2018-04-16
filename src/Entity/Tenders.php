@@ -90,5 +90,105 @@ class Tenders
      */
     private $member;
 
+    public function getTenderId() 
+    {
+        return $this->tenderId;
+    }
+
+    public function getTitle() 
+    {
+        return $this->title;
+    }
+
+    public function getDescription() 
+    {
+        return $this->description;
+    }
+
+    public function getProposedBudget() 
+    {
+        return $this->proposedBudget;
+    }
+
+    public function getSector() 
+    {
+        return $this->sector;
+    }
+
+    public function getAttachment() 
+    {
+        return $this->attachment;
+    }
+
+    public function getCount() 
+    {
+        return $this->count;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getProject(): \Projects 
+    {
+        return $this->project;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setTenderId($tenderId) 
+    {
+        $this->tenderId = $tenderId;
+    }
+
+    public function setTitle($title) 
+    {
+        $this->title = $title;
+    }
+
+    public function setDescription($description) 
+    {
+        $this->description = $description;
+    }
+
+    public function setProposedBudget($proposedBudget) 
+    {
+        $this->proposedBudget = $proposedBudget;
+    }
+
+    public function setSector($sector) 
+    {
+        $this->sector = $sector;
+    }
+
+    public function setAttachment($attachment) 
+    {
+        $this->attachment = $attachment;
+    }
+
+    public function setCount($count) 
+    {
+        $this->count = $count;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setProject(\Projects $project) 
+    {
+        $this->project = $project;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

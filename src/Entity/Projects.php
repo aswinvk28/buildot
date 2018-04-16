@@ -132,5 +132,165 @@ class Projects
      */
     private $countryid;
 
+    public function getProjectId() 
+    {
+        return $this->projectId;
+    }
+
+    public function getProjectRefNo() 
+    {
+        return $this->projectRefNo;
+    }
+
+    public function getProjectName() 
+    {
+        return $this->projectName;
+    }
+
+    public function getProjectLocation() 
+    {
+        return $this->projectLocation;
+    }
+
+    public function getLocationMap() 
+    {
+        return $this->locationMap;
+    }
+
+    public function getMaxAllocBudget() 
+    {
+        return $this->maxAllocBudget;
+    }
+
+    public function getOpeningDate(): \DateTime 
+    {
+        return $this->openingDate;
+    }
+
+    public function getClosingDate(): \DateTime 
+    {
+        return $this->closingDate;
+    }
+
+    public function getDescription() 
+    {
+        return $this->description;
+    }
+
+    public function getAttachment1() 
+    {
+        return $this->attachment1;
+    }
+
+    public function getAttachment2() 
+    {
+        return $this->attachment2;
+    }
+
+    public function getPublishto() 
+    {
+        return $this->publishto;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getModified(): \DateTime 
+    {
+        return $this->modified;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function getCountryid(): \Countries 
+    {
+        return $this->countryid;
+    }
+
+    public function setProjectId($projectId) 
+    {
+        $this->projectId = $projectId;
+    }
+
+    public function setProjectRefNo($projectRefNo) 
+    {
+        $this->projectRefNo = $projectRefNo;
+    }
+
+    public function setProjectName($projectName) 
+    {
+        $this->projectName = $projectName;
+    }
+
+    public function setProjectLocation($projectLocation) 
+    {
+        $this->projectLocation = $projectLocation;
+    }
+
+    public function setLocationMap($locationMap) 
+    {
+        $this->locationMap = $locationMap;
+    }
+
+    public function setMaxAllocBudget($maxAllocBudget) 
+    {
+        $this->maxAllocBudget = $maxAllocBudget;
+    }
+
+    public function setOpeningDate(\DateTime $openingDate) 
+    {
+        $this->openingDate = $openingDate;
+    }
+
+    public function setClosingDate(\DateTime $closingDate) 
+    {
+        $this->closingDate = $closingDate;
+    }
+
+    public function setDescription($description) 
+    {
+        $this->description = $description;
+    }
+
+    public function setAttachment1($attachment1) 
+    {
+        $this->attachment1 = $attachment1;
+    }
+
+    public function setAttachment2($attachment2) 
+    {
+        $this->attachment2 = $attachment2;
+    }
+
+    public function setPublishto($publishto) 
+    {
+        $this->publishto = $publishto;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setModified(\DateTime $modified) 
+    {
+        $this->modified = $modified;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
+    public function setCountryid(\Countries $countryid) 
+    {
+        $this->countryid = $countryid;
+    }
+
 
 }

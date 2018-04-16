@@ -77,5 +77,95 @@ class Countries
      */
     private $display = '0';
 
+    public function getCountryid() 
+    {
+        return $this->countryid;
+    }
+
+    public function getCountry() 
+    {
+        return $this->country;
+    }
+
+    public function getCurrency() 
+    {
+        return $this->currency;
+    }
+
+    public function getCurrencyName() 
+    {
+        return $this->currencyName;
+    }
+
+    public function getCountryCode() 
+    {
+        return $this->countryCode;
+    }
+
+    public function getCountryLetter() 
+    {
+        return $this->countryLetter;
+    }
+
+    public function getCurrencyDisplay() 
+    {
+        return $this->currencyDisplay;
+    }
+
+    public function getSelected() 
+    {
+        return $this->selected;
+    }
+
+    public function getDisplay() 
+    {
+        return $this->display;
+    }
+
+    public function setCountryid($countryid) 
+    {
+        $this->countryid = $countryid;
+    }
+
+    public function setCountry($country) 
+    {
+        $this->country = $country;
+    }
+
+    public function setCurrency($currency) 
+    {
+        $this->currency = $currency;
+    }
+
+    public function setCurrencyName($currencyName) 
+    {
+        $this->currencyName = $currencyName;
+    }
+
+    public function setCountryCode($countryCode) 
+    {
+        $this->countryCode = $countryCode;
+    }
+
+    public function setCountryLetter($countryLetter) 
+    {
+        $this->countryLetter = $countryLetter;
+    }
+
+    public function setCurrencyDisplay($currencyDisplay) 
+    {
+        $this->currencyDisplay = $currencyDisplay;
+    }
+
+    public function setSelected($selected) 
+    {
+        $this->selected = $selected;
+    }
+
+    public function setDisplay($display) 
+    {
+        $this->display = $display;
+    }
+
 
 }

@@ -87,5 +87,105 @@ class Groups
      */
     private $groupOwner;
 
+    public function getGroupId() 
+    {
+        return $this->groupId;
+    }
+
+    public function getGroupName() 
+    {
+        return $this->groupName;
+    }
+
+    public function getGroupType() 
+    {
+        return $this->groupType;
+    }
+
+    public function getWebsite() 
+    {
+        return $this->website;
+    }
+
+    public function getPrivacy() 
+    {
+        return $this->privacy;
+    }
+
+    public function getSummary() 
+    {
+        return $this->summary;
+    }
+
+    public function getDescription() 
+    {
+        return $this->description;
+    }
+
+    public function getGroupImage() 
+    {
+        return $this->groupImage;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getGroupOwner(): \Members 
+    {
+        return $this->groupOwner;
+    }
+
+    public function setGroupId($groupId) 
+    {
+        $this->groupId = $groupId;
+    }
+
+    public function setGroupName($groupName) 
+    {
+        $this->groupName = $groupName;
+    }
+
+    public function setGroupType($groupType) 
+    {
+        $this->groupType = $groupType;
+    }
+
+    public function setWebsite($website) 
+    {
+        $this->website = $website;
+    }
+
+    public function setPrivacy($privacy) 
+    {
+        $this->privacy = $privacy;
+    }
+
+    public function setSummary($summary) 
+    {
+        $this->summary = $summary;
+    }
+
+    public function setDescription($description) 
+    {
+        $this->description = $description;
+    }
+
+    public function setGroupImage($groupImage) 
+    {
+        $this->groupImage = $groupImage;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setGroupOwner(\Members $groupOwner) 
+    {
+        $this->groupOwner = $groupOwner;
+    }
+
 
 }

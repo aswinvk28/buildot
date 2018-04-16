@@ -71,5 +71,75 @@ class Users
      */
     private $usertype;
 
+    public function getUserId() 
+    {
+        return $this->userId;
+    }
+
+    public function getEmail() 
+    {
+        return $this->email;
+    }
+
+    public function getPassword() 
+    {
+        return $this->password;
+    }
+
+    public function getStatus() 
+    {
+        return $this->status;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getModified(): \DateTime 
+    {
+        return $this->modified;
+    }
+
+    public function getUsertype(): \Usertype 
+    {
+        return $this->usertype;
+    }
+
+    public function setUserId($userId) 
+    {
+        $this->userId = $userId;
+    }
+
+    public function setEmail($email) 
+    {
+        $this->email = $email;
+    }
+
+    public function setPassword($password) 
+    {
+        $this->password = $password;
+    }
+
+    public function setStatus($status) 
+    {
+        $this->status = $status;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setModified(\DateTime $modified) 
+    {
+        $this->modified = $modified;
+    }
+
+    public function setUsertype(\Usertype $usertype) 
+    {
+        $this->usertype = $usertype;
+    }
+
 
 }

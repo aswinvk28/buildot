@@ -48,5 +48,45 @@ class HideUpdates
      */
     private $update;
 
+    public function getHideId() 
+    {
+        return $this->hideId;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function getUpdate(): \Updates 
+    {
+        return $this->update;
+    }
+
+    public function setHideId($hideId) 
+    {
+        $this->hideId = $hideId;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
+    public function setUpdate(\Updates $update) 
+    {
+        $this->update = $update;
+    }
+
 
 }

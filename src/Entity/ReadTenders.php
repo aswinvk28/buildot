@@ -41,5 +41,35 @@ class ReadTenders
      */
     private $tender;
 
+    public function getId() 
+    {
+        return $this->id;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function getTender(): \Tenders 
+    {
+        return $this->tender;
+    }
+
+    public function setId($id) 
+    {
+        $this->id = $id;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
+    public function setTender(\Tenders $tender) 
+    {
+        $this->tender = $tender;
+    }
+
 
 }

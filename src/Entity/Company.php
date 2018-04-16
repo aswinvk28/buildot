@@ -70,5 +70,85 @@ class Company
      */
     private $modified;
 
+    public function getCompanyId() 
+    {
+        return $this->companyId;
+    }
+
+    public function getCompanyName() 
+    {
+        return $this->companyName;
+    }
+
+    public function getWebsite() 
+    {
+        return $this->website;
+    }
+
+    public function getLogo() 
+    {
+        return $this->logo;
+    }
+
+    public function getPortfolio() 
+    {
+        return $this->portfolio;
+    }
+
+    public function getCompanyStatus() 
+    {
+        return $this->companyStatus;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getModified(): \DateTime 
+    {
+        return $this->modified;
+    }
+
+    public function setCompanyId($companyId) 
+    {
+        $this->companyId = $companyId;
+    }
+
+    public function setCompanyName($companyName) 
+    {
+        $this->companyName = $companyName;
+    }
+
+    public function setWebsite($website) 
+    {
+        $this->website = $website;
+    }
+
+    public function setLogo($logo) 
+    {
+        $this->logo = $logo;
+    }
+
+    public function setPortfolio($portfolio) 
+    {
+        $this->portfolio = $portfolio;
+    }
+
+    public function setCompanyStatus($companyStatus) 
+    {
+        $this->companyStatus = $companyStatus;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setModified(\DateTime $modified) 
+    {
+        $this->modified = $modified;
+    }
+
 
 }

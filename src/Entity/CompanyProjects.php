@@ -86,5 +86,95 @@ class CompanyProjects
      */
     private $projectOwner;
 
+    public function getProjectId() 
+    {
+        return $this->projectId;
+    }
+
+    public function getProjectName() 
+    {
+        return $this->projectName;
+    }
+
+    public function getProjectType() 
+    {
+        return $this->projectType;
+    }
+
+    public function getProjectLocation() 
+    {
+        return $this->projectLocation;
+    }
+
+    public function getProjectDescription() 
+    {
+        return $this->projectDescription;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getCompanyid(): \Company 
+    {
+        return $this->companyid;
+    }
+
+    public function getCountryid(): \Countries 
+    {
+        return $this->countryid;
+    }
+
+    public function getProjectOwner(): \Members 
+    {
+        return $this->projectOwner;
+    }
+
+    public function setProjectId($projectId) 
+    {
+        $this->projectId = $projectId;
+    }
+
+    public function setProjectName($projectName) 
+    {
+        $this->projectName = $projectName;
+    }
+
+    public function setProjectType($projectType) 
+    {
+        $this->projectType = $projectType;
+    }
+
+    public function setProjectLocation($projectLocation) 
+    {
+        $this->projectLocation = $projectLocation;
+    }
+
+    public function setProjectDescription($projectDescription) 
+    {
+        $this->projectDescription = $projectDescription;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setCompanyid(\Company $companyid) 
+    {
+        $this->companyid = $companyid;
+    }
+
+    public function setCountryid(\Countries $countryid) 
+    {
+        $this->countryid = $countryid;
+    }
+
+    public function setProjectOwner(\Members $projectOwner) 
+    {
+        $this->projectOwner = $projectOwner;
+    }
+
 
 }

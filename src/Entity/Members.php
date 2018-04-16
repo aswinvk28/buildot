@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use App\Model\AbstractDocument;
 
 /**
  * Members
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="members", indexes={@ORM\Index(name="FK_members", columns={"user_id"}), @ORM\Index(name="FK_members_company", columns={"company_id"}), @ORM\Index(name="FK_members_functional_area", columns={"company_functional_area_id"}), @ORM\Index(name="FK_members_countries", columns={"countryId"})})
  * @ORM\Entity
  */
-class Members
+class Members extends AbstractDocument
 {
     /**
      * @var int
@@ -171,5 +173,240 @@ class Members
      */
     private $countryid;
 
+    public function getMemberId() 
+    {
+        return $this->memberId;
+    }
 
+    public function getCompanyType() 
+    {
+        return $this->companyType;
+    }
+
+    public function getCompanyFunctionalAreaId() 
+    {
+        return $this->companyFunctionalAreaId;
+    }
+
+    public function getFirstName() 
+    {
+        return $this->firstName;
+    }
+
+    public function getLastName() 
+    {
+        return $this->lastName;
+    }
+
+    public function getDesignation() 
+    {
+        return $this->designation;
+    }
+
+    public function getTelephone() 
+    {
+        return $this->telephone;
+    }
+
+    public function getMobile() 
+    {
+        return $this->mobile;
+    }
+
+    public function getFax() 
+    {
+        return $this->fax;
+    }
+
+    public function getLocation() 
+    {
+        return $this->location;
+    }
+
+    public function getGender() 
+    {
+        return $this->gender;
+    }
+
+    public function getDateofbirth(): \DateTime 
+    {
+        return $this->dateofbirth;
+    }
+
+    public function getMemberPhoto() 
+    {
+        return $this->memberPhoto;
+    }
+
+    public function getStatus() 
+    {
+        return $this->status;
+    }
+
+    public function getCv() 
+    {
+        return $this->cv;
+    }
+
+    public function getPortfolio() 
+    {
+        return $this->portfolio;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getModified(): \DateTime 
+    {
+        return $this->modified;
+    }
+
+    public function getUser(): \Users 
+    {
+        return $this->user;
+    }
+
+    public function getCompany(): \Company 
+    {
+        return $this->company;
+    }
+
+    public function getCountryid(): \Countries 
+    {
+        return $this->countryid;
+    }
+
+    public function setMemberId($memberId) 
+    {
+        $this->memberId = $memberId;
+    }
+
+    public function setCompanyType($companyType) 
+    {
+        $this->companyType = $companyType;
+    }
+
+    public function setCompanyFunctionalAreaId($companyFunctionalAreaId) 
+    {
+        $this->companyFunctionalAreaId = $companyFunctionalAreaId;
+    }
+
+    public function setFirstName($firstName) 
+    {
+        $this->firstName = $firstName;
+    }
+
+    public function setLastName($lastName) 
+    {
+        $this->lastName = $lastName;
+    }
+
+    public function setDesignation($designation) 
+    {
+        $this->designation = $designation;
+    }
+
+    public function setTelephone($telephone) 
+    {
+        $this->telephone = $telephone;
+    }
+
+    public function setMobile($mobile) 
+    {
+        $this->mobile = $mobile;
+    }
+
+    public function setFax($fax) 
+    {
+        $this->fax = $fax;
+    }
+
+    public function setLocation($location) 
+    {
+        $this->location = $location;
+    }
+
+    public function setGender($gender) 
+    {
+        $this->gender = $gender;
+    }
+
+    public function setDateofbirth(\DateTime $dateofbirth) 
+    {
+        $this->dateofbirth = $dateofbirth;
+    }
+
+    public function setMemberPhoto($memberPhoto) 
+    {
+        $this->memberPhoto = $memberPhoto;
+    }
+
+    public function setStatus($status) 
+    {
+        $this->status = $status;
+    }
+
+    public function setCv($cv) 
+    {
+        $this->cv = $cv;
+    }
+
+    public function setPortfolio($portfolio) 
+    {
+        $this->portfolio = $portfolio;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setModified(\DateTime $modified) 
+    {
+        $this->modified = $modified;
+    }
+
+    public function setUser(\Users $user) 
+    {
+        $this->user = $user;
+    }
+
+    public function setCompany(\Company $company) 
+    {
+        $this->company = $company;
+    }
+
+    public function setCountryid(\Countries $countryid) 
+    {
+        $this->countryid = $countryid;
+    }
+
+    public function setPersonalPhoto(File $file, string $directory)
+    {
+        $directory = $this->createDirectoryIfNotExists($directory . DIRECTORY_SEPARATOR . $this->hashDirectory());
+        $file->move($directory, 
+                $this->hashFileName($file->getFilename()));
+        $this->setMemberPhoto($file->getPath());
+        return $file;
+    }
+    
+    public function setCurriculumVitae(File $file, string $directory)
+    {
+        $directory = $this->createDirectoryIfNotExists($directory . DIRECTORY_SEPARATOR . $this->hashDirectory());
+        $file->move($directory, 
+                $this->hashFileName($file->getFilename()));
+        $this->setCv($file->getPath());
+        return $file;
+    }
+    
+    public function setWorkPortfolio(File $file, string $directory)
+    {
+        $directory = $this->createDirectoryIfNotExists($directory . DIRECTORY_SEPARATOR . $this->hashDirectory());
+        $file->move($directory, 
+                $this->hashFileName($file->getFilename()));
+        $this->setPortfolio($file->getPath());
+        return $file;
+    }
 }

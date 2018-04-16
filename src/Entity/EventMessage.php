@@ -55,5 +55,55 @@ class EventMessage
      */
     private $member;
 
+    public function getMsgId() 
+    {
+        return $this->msgId;
+    }
+
+    public function getMessage() 
+    {
+        return $this->message;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getEvent(): \Events 
+    {
+        return $this->event;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setMsgId($msgId) 
+    {
+        $this->msgId = $msgId;
+    }
+
+    public function setMessage($message) 
+    {
+        $this->message = $message;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setEvent(\Events $event) 
+    {
+        $this->event = $event;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

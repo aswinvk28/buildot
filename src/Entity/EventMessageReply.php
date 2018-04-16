@@ -55,5 +55,55 @@ class EventMessageReply
      */
     private $member;
 
+    public function getReplyId() 
+    {
+        return $this->replyId;
+    }
+
+    public function getReplyMessage() 
+    {
+        return $this->replyMessage;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getMsg(): \EventMessage 
+    {
+        return $this->msg;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setReplyId($replyId) 
+    {
+        $this->replyId = $replyId;
+    }
+
+    public function setReplyMessage($replyMessage) 
+    {
+        $this->replyMessage = $replyMessage;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setMsg(\EventMessage $msg) 
+    {
+        $this->msg = $msg;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

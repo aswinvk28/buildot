@@ -59,5 +59,65 @@ class Updates
      */
     private $member;
 
+    public function getId() 
+    {
+        return $this->id;
+    }
+
+    public function getUpdateMessage() 
+    {
+        return $this->updateMessage;
+    }
+
+    public function getTableName() 
+    {
+        return $this->tableName;
+    }
+
+    public function getIds() 
+    {
+        return $this->ids;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function setId($id) 
+    {
+        $this->id = $id;
+    }
+
+    public function setUpdateMessage($updateMessage) 
+    {
+        $this->updateMessage = $updateMessage;
+    }
+
+    public function setTableName($tableName) 
+    {
+        $this->tableName = $tableName;
+    }
+
+    public function setIds($ids) 
+    {
+        $this->ids = $ids;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
 
 }

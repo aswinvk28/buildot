@@ -41,5 +41,35 @@ class ReadProjects
      */
     private $project;
 
+    public function getId() 
+    {
+        return $this->id;
+    }
+
+    public function getMember(): \Members 
+    {
+        return $this->member;
+    }
+
+    public function getProject(): \Projects 
+    {
+        return $this->project;
+    }
+
+    public function setId($id) 
+    {
+        $this->id = $id;
+    }
+
+    public function setMember(\Members $member) 
+    {
+        $this->member = $member;
+    }
+
+    public function setProject(\Projects $project) 
+    {
+        $this->project = $project;
+    }
+
 
 }

@@ -69,5 +69,75 @@ class ShareInvites
      */
     private $toMember;
 
+    public function getShareId() 
+    {
+        return $this->shareId;
+    }
+
+    public function getPage() 
+    {
+        return $this->page;
+    }
+
+    public function getId() 
+    {
+        return $this->id;
+    }
+
+    public function getStatus() 
+    {
+        return $this->status;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getFromMember(): \Members 
+    {
+        return $this->fromMember;
+    }
+
+    public function getToMember(): \Members 
+    {
+        return $this->toMember;
+    }
+
+    public function setShareId($shareId) 
+    {
+        $this->shareId = $shareId;
+    }
+
+    public function setPage($page) 
+    {
+        $this->page = $page;
+    }
+
+    public function setId($id) 
+    {
+        $this->id = $id;
+    }
+
+    public function setStatus($status) 
+    {
+        $this->status = $status;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setFromMember(\Members $fromMember) 
+    {
+        $this->fromMember = $fromMember;
+    }
+
+    public function setToMember(\Members $toMember) 
+    {
+        $this->toMember = $toMember;
+    }
+
 
 }

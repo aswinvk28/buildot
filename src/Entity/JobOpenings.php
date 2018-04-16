@@ -104,5 +104,125 @@ class JobOpenings
      */
     private $createdBy;
 
+    public function getJobOpeningId() 
+    {
+        return $this->jobOpeningId;
+    }
+
+    public function getTitle() 
+    {
+        return $this->title;
+    }
+
+    public function getDescription() 
+    {
+        return $this->description;
+    }
+
+    public function getLocation() 
+    {
+        return $this->location;
+    }
+
+    public function getContactNumber() 
+    {
+        return $this->contactNumber;
+    }
+
+    public function getEmail() 
+    {
+        return $this->email;
+    }
+
+    public function getExpiryDate(): \DateTime 
+    {
+        return $this->expiryDate;
+    }
+
+    public function getStatus() 
+    {
+        return $this->status;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getModified(): \DateTime 
+    {
+        return $this->modified;
+    }
+
+    public function getJobCat(): \JobCategories 
+    {
+        return $this->jobCat;
+    }
+
+    public function getCreatedBy(): \Members 
+    {
+        return $this->createdBy;
+    }
+
+    public function setJobOpeningId($jobOpeningId) 
+    {
+        $this->jobOpeningId = $jobOpeningId;
+    }
+
+    public function setTitle($title) 
+    {
+        $this->title = $title;
+    }
+
+    public function setDescription($description) 
+    {
+        $this->description = $description;
+    }
+
+    public function setLocation($location) 
+    {
+        $this->location = $location;
+    }
+
+    public function setContactNumber($contactNumber) 
+    {
+        $this->contactNumber = $contactNumber;
+    }
+
+    public function setEmail($email) 
+    {
+        $this->email = $email;
+    }
+
+    public function setExpiryDate(\DateTime $expiryDate) 
+    {
+        $this->expiryDate = $expiryDate;
+    }
+
+    public function setStatus($status) 
+    {
+        $this->status = $status;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setModified(\DateTime $modified) 
+    {
+        $this->modified = $modified;
+    }
+
+    public function setJobCat(\JobCategories $jobCat) 
+    {
+        $this->jobCat = $jobCat;
+    }
+
+    public function setCreatedBy(\Members $createdBy) 
+    {
+        $this->createdBy = $createdBy;
+    }
+
 
 }

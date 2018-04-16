@@ -73,5 +73,85 @@ class Banners
      */
     private $bannerCat;
 
+    public function getBannerId() 
+    {
+        return $this->bannerId;
+    }
+
+    public function getBannerTitle() 
+    {
+        return $this->bannerTitle;
+    }
+
+    public function getFile() 
+    {
+        return $this->file;
+    }
+
+    public function getLink() 
+    {
+        return $this->link;
+    }
+
+    public function getStatus() 
+    {
+        return $this->status;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getModified(): \DateTime 
+    {
+        return $this->modified;
+    }
+
+    public function getBannerCat(): \BannerCategory 
+    {
+        return $this->bannerCat;
+    }
+
+    public function setBannerId($bannerId) 
+    {
+        $this->bannerId = $bannerId;
+    }
+
+    public function setBannerTitle($bannerTitle) 
+    {
+        $this->bannerTitle = $bannerTitle;
+    }
+
+    public function setFile($file) 
+    {
+        $this->file = $file;
+    }
+
+    public function setLink($link) 
+    {
+        $this->link = $link;
+    }
+
+    public function setStatus($status) 
+    {
+        $this->status = $status;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setModified(\DateTime $modified) 
+    {
+        $this->modified = $modified;
+    }
+
+    public function setBannerCat(\BannerCategory $bannerCat) 
+    {
+        $this->bannerCat = $bannerCat;
+    }
+
 
 }

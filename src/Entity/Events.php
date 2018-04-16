@@ -90,5 +90,105 @@ class Events
      */
     private $countryid;
 
+    public function getEventId() 
+    {
+        return $this->eventId;
+    }
+
+    public function getEventTitle() 
+    {
+        return $this->eventTitle;
+    }
+
+    public function getDescription() 
+    {
+        return $this->description;
+    }
+
+    public function getLocation() 
+    {
+        return $this->location;
+    }
+
+    public function getEventDate(): \DateTime 
+    {
+        return $this->eventDate;
+    }
+
+    public function getWebsite() 
+    {
+        return $this->website;
+    }
+
+    public function getImage() 
+    {
+        return $this->image;
+    }
+
+    public function getCreated(): \DateTime 
+    {
+        return $this->created;
+    }
+
+    public function getCreatedBy(): \Members 
+    {
+        return $this->createdBy;
+    }
+
+    public function getCountryid(): \Countries 
+    {
+        return $this->countryid;
+    }
+
+    public function setEventId($eventId) 
+    {
+        $this->eventId = $eventId;
+    }
+
+    public function setEventTitle($eventTitle) 
+    {
+        $this->eventTitle = $eventTitle;
+    }
+
+    public function setDescription($description) 
+    {
+        $this->description = $description;
+    }
+
+    public function setLocation($location) 
+    {
+        $this->location = $location;
+    }
+
+    public function setEventDate(\DateTime $eventDate) 
+    {
+        $this->eventDate = $eventDate;
+    }
+
+    public function setWebsite($website) 
+    {
+        $this->website = $website;
+    }
+
+    public function setImage($image) 
+    {
+        $this->image = $image;
+    }
+
+    public function setCreated(\DateTime $created) 
+    {
+        $this->created = $created;
+    }
+
+    public function setCreatedBy(\Members $createdBy) 
+    {
+        $this->createdBy = $createdBy;
+    }
+
+    public function setCountryid(\Countries $countryid) 
+    {
+        $this->countryid = $countryid;
+    }
+
 
 }
