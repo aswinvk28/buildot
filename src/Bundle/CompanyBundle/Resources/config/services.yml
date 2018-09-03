@@ -1,0 +1,6 @@
+parameters:
+    user_account_provider.class: App\Bundle\CompanyBundle\Security\UserAccountServiceProvider
+
+#services:
+#    user_account_provider:
+#        class: %user_account_provider.class%

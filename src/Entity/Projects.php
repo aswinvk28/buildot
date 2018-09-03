@@ -162,12 +162,12 @@ class Projects
         return $this->maxAllocBudget;
     }
 
-    public function getOpeningDate(): \DateTime 
+    public function getOpeningDate(): \DateTime
     {
         return $this->openingDate;
     }
 
-    public function getClosingDate(): \DateTime 
+    public function getClosingDate(): \DateTime
     {
         return $this->closingDate;
     }
@@ -192,22 +192,22 @@ class Projects
         return $this->publishto;
     }
 
-    public function getCreated(): \DateTime 
+    public function getCreated(): \DateTime
     {
         return $this->created;
     }
 
-    public function getModified(): \DateTime 
+    public function getModified(): \DateTime
     {
         return $this->modified;
     }
 
-    public function getMember(): \Members 
+    public function getMember(): Members 
     {
         return $this->member;
     }
 
-    public function getCountryid(): \Countries 
+    public function getCountryid(): Countries 
     {
         return $this->countryid;
     }
@@ -282,12 +282,12 @@ class Projects
         $this->modified = $modified;
     }
 
-    public function setMember(\Members $member) 
+    public function setMember(Members $member) 
     {
         $this->member = $member;
     }
 
-    public function setCountryid(\Countries $countryid) 
+    public function setCountryid(Countries $countryid) 
     {
         $this->countryid = $countryid;
     }

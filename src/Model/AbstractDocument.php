@@ -13,7 +13,7 @@ namespace App\Model;
  *
  * @author aswin.vijayakumar
  */
-abstract class AbstractDocument 
+trait AbstractDocument 
 {
     public function hashFileName($filename)
     {

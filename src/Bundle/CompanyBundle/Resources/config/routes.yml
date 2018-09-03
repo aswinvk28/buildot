@@ -1,0 +1,8 @@
+company_account:
+    resource: '@CompanyBundle/Controller/CompanyAccountRegistrationController.php'
+    type: annotation
+
+personal_account:
+    resource: '@CompanyBundle/Controller/PersonalAccountRegistrationController.php'
+    type: annotation
+    

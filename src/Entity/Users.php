@@ -3,14 +3,17 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Symfony\Component\Security\Core\User\EquatableInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Users
  *
  * @ORM\Table(name="users", indexes={@ORM\Index(name="FK_users", columns={"usertype"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
  */
-class Users
+class Users implements AdvancedUserInterface, EquatableInterface, \Serializable
 {
     const BLOCKED = -1;
     const DEACTIVATED = 0;
@@ -70,6 +73,17 @@ class Users
      * })
      */
     private $usertype;
+    
+    private $roles;
+    private $salt;
+    
+    public function __construct($email, $password, $salt, array $roles)
+    {
+        $this->email = $email;
+        $this->password = $password;
+        $this->salt = $salt;
+        $this->roles = $roles;
+    }
 
     public function getUserId() 
     {
@@ -101,7 +115,7 @@ class Users
         return $this->modified;
     }
 
-    public function getUsertype(): \Usertype 
+    public function getUsertype(): Usertype 
     {
         return $this->usertype;
     }
@@ -136,10 +150,99 @@ class Users
         $this->modified = $modified;
     }
 
-    public function setUsertype(\Usertype $usertype) 
+    public function setUsertype(Usertype $usertype) 
     {
         $this->usertype = $usertype;
     }
 
+    public function setRole($role)
+    {
+        $usertype = new Usertype;
+        $usertype->setUsertypename(ucfirst($role));
+        $this->setUsertype($usertype);
+    }
+
+    public function eraseCredentials() 
+    {
+        return false;
+    }
+
+    public function getRoles() 
+    {
+        return $this->roles;
+    }
+
+    public function getSalt() 
+    {
+        return $this->salt;
+    }
+
+    public function getUsername(): string 
+    {
+        return $this->email;
+    }
+
+    public function isEqualTo(UserInterface $user): bool 
+    {
+        if (!$user instanceof Users) {
+            return false;
+        }
+
+        if ($this->password !== $user->getPassword()) {
+            return false;
+        }
+
+        if ($this->getSalt() !== $user->getSalt()) {
+            return false;
+        }
+
+        if ($this->email !== $user->getUsername()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function isAccountNonExpired(): bool 
+    {
+        return $this->status != self::DEACTIVATED;
+    }
+
+    public function isAccountNonLocked(): bool 
+    {
+        return $this->status != self::BLOCKED;
+    }
+
+    public function isCredentialsNonExpired(): bool 
+    {
+        return true;
+    }
+
+    public function isEnabled(): bool 
+    {
+        return $this->status >= self::ACTIVATED;
+    }
+    
+    public function serialize()
+    {
+        return serialize(
+          $this->id,
+          $this->email,
+          $this->password,
+          $this->usertype,
+          $this->roles
+        );
+    }
+    
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->email,
+            $this->password,
+            $this->usertype,
+            $this->roles
+        ) = unserialize($serialized, ['allowed_classes' => false]);
+    }
 
 }

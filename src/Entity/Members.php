@@ -5,6 +5,8 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use App\Model\AbstractDocument;
+use App\Model\CircularReferenceSerializer;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 /**
  * Members
@@ -12,8 +14,10 @@ use App\Model\AbstractDocument;
  * @ORM\Table(name="members", indexes={@ORM\Index(name="FK_members", columns={"user_id"}), @ORM\Index(name="FK_members_company", columns={"company_id"}), @ORM\Index(name="FK_members_functional_area", columns={"company_functional_area_id"}), @ORM\Index(name="FK_members_countries", columns={"countryId"})})
  * @ORM\Entity
  */
-class Members extends AbstractDocument
+class Members implements CircularReferenceSerializer
 {
+    use AbstractDocument;
+    
     /**
      * @var int
      *
@@ -197,6 +201,11 @@ class Members extends AbstractDocument
     {
         return $this->lastName;
     }
+    
+    public function getName()
+    {
+        return $this->firstName . " " . $this->lastName;
+    }
 
     public function getDesignation() 
     {
@@ -263,17 +272,17 @@ class Members extends AbstractDocument
         return $this->modified;
     }
 
-    public function getUser(): \Users 
+    public function getUser(): Users 
     {
         return $this->user;
     }
 
-    public function getCompany(): \Company 
+    public function getCompany()
     {
         return $this->company;
     }
 
-    public function getCountryid(): \Countries 
+    public function getCountryid(): Countries 
     {
         return $this->countryid;
     }
@@ -368,17 +377,17 @@ class Members extends AbstractDocument
         $this->modified = $modified;
     }
 
-    public function setUser(\Users $user) 
+    public function setUser(Users $user) 
     {
         $this->user = $user;
     }
 
-    public function setCompany(\Company $company) 
+    public function setCompany(Company $company) 
     {
         $this->company = $company;
     }
 
-    public function setCountryid(\Countries $countryid) 
+    public function setCountryid(Countries $countryid) 
     {
         $this->countryid = $countryid;
     }

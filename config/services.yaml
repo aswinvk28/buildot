@@ -5,6 +5,8 @@ parameters:
     cv_dir: '%kernel.project_dir%/public/uploaded/cv'
     portfolio_dir: '%kernel.project_dir%/public/uploads/portfolio'
     photo_dir: '%kernel.project_dir%/public/uploads/photo'
+    logo_dir: '%kernel.project_dir%/public/uploads/logo'
+    circular_reference_parameter: 'getName'
 
 services:
     # default configuration for services in *this* file
@@ -29,3 +31,8 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+#    App\Model\Utils:
+#        tags: ['entity.serializer.circular_reference']
+#        calls:
+#            - [getCircularReferenceResolver, ['%circular_reference_parameter%']]

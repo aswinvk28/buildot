@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Model\CircularReferenceSerializer;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 /**
  * Company
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="company")
  * @ORM\Entity
  */
-class Company
+class Company implements CircularReferenceSerializer
 {
     /**
      * @var int
@@ -57,6 +59,15 @@ class Company
     private $companyStatus = '0';
 
     /**
+     * @var int|null
+     * @ORM\OneToOne(targetEntity="Members")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="member_id", referencedColumnName="member_id")
+     * })
+     */
+    private $member;
+    
+    /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="created", type="datetime", nullable=true)
@@ -76,6 +87,11 @@ class Company
     }
 
     public function getCompanyName() 
+    {
+        return $this->companyName;
+    }
+    
+    public function getName()
     {
         return $this->companyName;
     }
@@ -148,6 +164,17 @@ class Company
     public function setModified(\DateTime $modified) 
     {
         $this->modified = $modified;
+    }
+
+    public function getMember(): Members
+    {
+        return $this->member;
+    }
+
+    public function setMember(Members $member) 
+    {
+        $this->member = $member;
+        return $this;
     }
 
 

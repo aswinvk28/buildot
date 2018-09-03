@@ -1,0 +1,4 @@
+#projects:
+#    type:     rest
+#    host:     api.buildot.com
+#    resource: App\Controller\ProjectsController

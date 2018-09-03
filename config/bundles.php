@@ -19,4 +19,6 @@ return [
     App\Bundle\ProjectBundle\ProjectBundle::class => ['all' => true],
     App\Bundle\CompanyBundle\CompanyBundle::class => ['all' => true],
     App\Bundle\GroupBundle\GroupBundle::class => ['all' => true],
+    App\Bundle\GroupBundle\SiteBundle::class => ['all' => true],
+//    FOS\RestBundle\FOSRestBundle::class => ['all' => true]
 ];

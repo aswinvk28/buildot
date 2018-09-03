@@ -8,11 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
  * Usertype
  *
  * @ORM\Table(name="usertype")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\UserTypeRepository")
  */
 class Usertype
 {
     const MEMBER = 'member';
+    const ADMIN = 'admin';
     
     /**
      * @var int
